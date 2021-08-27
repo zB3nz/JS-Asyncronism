@@ -6,9 +6,7 @@ function fetchData(url_api, callback) {
     xhttp.open('GET', url_api, true);
     xhttp.onreadystatechange =  (event) => {
         if (xhttp.readyState === 4) {
-            console.log("status: " + xhttp.status);
             if (xhttp.status === 200) {
-                console.log(2);
                 callback(null, JSON.parse(xhttp.responseText));
             } else {
                 const error = new Error('Error ' + url_api);
